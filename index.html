@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Calculatrice principale -->
+        <div class="calculator">
+            <div class="display">
+                <div class="expression" id="expression"></div>
+                <div class="result" id="result">0</div>
+            </div>
+            <div class="buttons">
+                <!-- Première ligne -->
+                <button class="btn special" onclick="clearAll()">AC</button>
+                <button class="btn special" onclick="appendToExpression('()')">( )</button>
+                <button class="btn special" onclick="appendToExpression('%')">%</button>
+                <button class="btn operator" onclick="appendToExpression('÷')">÷</button>
+                
+                <!-- Deuxième ligne -->
+                <button class="btn number" onclick="appendToExpression('7')">7</button>
+                <button class="btn number" onclick="appendToExpression('8')">8</button>
+                <button class="btn number" onclick="appendToExpression('9')">9</button>
+                <button class="btn operator" onclick="appendToExpression('×')">×</button>
+                
+                <!-- Troisième ligne -->
+                <button class="btn number" onclick="appendToExpression('4')">4</button>
+                <button class="btn number" onclick="appendToExpression('5')">5</button>
+                <button class="btn number" onclick="appendToExpression('6')">6</button>
+                <button class="btn operator" onclick="appendToExpression('-')">-</button>
+                
+                <!-- Quatrième ligne -->
+                <button class="btn number" onclick="appendToExpression('1')">1</button>
+                <button class="btn number" onclick="appendToExpression('2')">2</button>
+                <button class="btn number" onclick="appendToExpression('3')">3</button>
+                <button class="btn operator" onclick="appendToExpression('+')">+</button>
+                
+                <!-- Cinquième ligne -->
+                <button class="btn number" onclick="appendToExpression('0')">0</button>
+                <button class="btn number" onclick="appendToExpression('.')">.</button>
+                <button class="btn backspace" onclick="backspace()">⌫</button>
+                <button class="btn equals" onclick="calculate()">=</button>
+            </div>
+        </div>
+        
+        <!-- Historique des opérations -->
+        <div class="history">
+            <h2>Historique</h2>
+            <div class="history-list" id="historyList">
+                <!-- Les opérations seront ajoutées ici dynamiquement -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

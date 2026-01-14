@@ -1,0 +1,236 @@
+/* ============================================
+   CALCULATRICE JS - STYLES CSS
+   Mini-Projet MIAGE 2025-2026
+   ============================================ */
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ============================================
+   CALCULATRICE
+   ============================================ */
+.calculator {
+    background: #1c1c1e;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    width: 320px;
+}
+
+/* Zone d'affichage */
+.display {
+    background: #1c1c1e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.expression {
+    color: #8e8e93;
+    font-size: 1.2rem;
+    min-height: 30px;
+    word-wrap: break-word;
+    text-align: right;
+    width: 100%;
+}
+
+.result {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    text-align: right;
+    width: 100%;
+}
+
+/* Grille des boutons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Styles des boutons */
+.btn {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Boutons numériques */
+.btn.number {
+    background: #333333;
+    color: #ffffff;
+}
+
+.btn.number:hover {
+    background: #4a4a4a;
+}
+
+/* Boutons spéciaux (AC, parenthèses, %) */
+.btn.special {
+    background: #007AFF;
+    color: #ffffff;
+}
+
+.btn.special:hover {
+    background: #0056b3;
+}
+
+/* Boutons opérateurs */
+.btn.operator {
+    background: #007AFF;
+    color: #ffffff;
+}
+
+.btn.operator:hover {
+    background: #0056b3;
+}
+
+/* Bouton backspace */
+.btn.backspace {
+    background: #333333;
+    color: #ffffff;
+}
+
+.btn.backspace:hover {
+    background: #4a4a4a;
+}
+
+/* Bouton égal */
+.btn.equals {
+    background: #007AFF;
+    color: #ffffff;
+}
+
+.btn.equals:hover {
+    background: #0056b3;
+}
+
+/* ============================================
+   HISTORIQUE
+   ============================================ */
+.history {
+    background: rgba(28, 28, 30, 0.9);
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    width: 280px;
+    min-height: 350px;
+}
+
+.history h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: right;
+}
+
+.history-expression {
+    color: #007AFF;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.history-result {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.no-history {
+    color: #8e8e93;
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .history {
+        width: 320px;
+    }
+}
+
+@media (max-width: 360px) {
+    .calculator {
+        width: 290px;
+        padding: 15px;
+    }
+    
+    .btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .history {
+        width: 290px;
+    }
+}
